@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="style.css">
+
 # SEE•N CN Vault 🌞
 
 **Rooted in Truth. Rising with Purpose.**
