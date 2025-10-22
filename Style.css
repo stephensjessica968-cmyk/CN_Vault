@@ -1,0 +1,22 @@
+body {
+  background: radial-gradient(circle at center, #fff8e1, #fce4ec);
+  color: #222;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 2rem;
+  animation: glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { background-color: #fff8e1; }
+  to { background-color: #fce4ec; }
+}
+
+a {
+  color: #d81b60;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  color: #ad1457;
+}
