@@ -1,0 +1,171 @@
+from reportlab.lib.pagesizes import letter
+
+from reportlab.pdfgen import canvas
+
+from reportlab.lib import colors
+
+from reportlab.lib.units import inch
+
+
+
+# Output path
+
+out_path = "/mnt/data/Destiny_Matrix_Personally_Assigned.pdf"
+
+
+
+# Page setup
+
+w, h = letter
+
+c = canvas.Canvas(out_path, pagesize=letter)
+
+c.setTitle("Destiny Matrix — Personally Assigned")
+
+
+
+# Title
+
+c.setFont("Helvetica-Bold", 16)
+
+c.drawCentredString(w/2, h - 50, "Destiny Matrix — Personally Assigned")
+
+
+
+# Section: Dhikr Stations
+
+c.setFont("Helvetica-Bold", 12)
+
+c.drawString(72, h - 100, "1. Dhikr Stations")
+
+c.setFont("Helvetica", 11)
+
+stations = [
+
+    "Subḥānallāh ×33 = Polishing the mirror (remembrance of His perfection).",
+
+    "Al-ḥamdu lillāh ×33 = Filling the heart with gratitude (acknowledging His ni‘mah).",
+
+    "Allāhu akbar ×34 = Expanding the vessel (magnifying Him above all).",
+
+    "Lā ilāha illā Allāh between each = Central axis (tawḥīd)."
+
+]
+
+y = h - 120
+
+for line in stations:
+
+    c.drawString(100, y, line)
+
+    y -= 16
+
+
+
+# Section: Physical Anchor Points
+
+c.setFont("Helvetica-Bold", 12)
+
+c.drawString(72, y - 10, "2. Physical Anchor Points")
+
+c.setFont("Helvetica", 11)
+
+anchor_points = [
+
+    "👆🏿 Ascend: Lift heart in gratitude.",
+
+    "👇🏿 Descend: Channel doubts into His depth.",
+
+    "🤲🏿 Hands open: Receive unseen provision.",
+
+    "🙇🏾‍♀️ Full prostration: Pride shatters at His threshold.",
+
+    "🧩 Integration pulse: Heart and mind become one code."
+
+]
+
+y -= 30
+
+for line in anchor_points:
+
+    c.drawString(100, y, line)
+
+    y -= 16
+
+
+
+# Section: Halal Destiny Mapping
+
+c.setFont("Helvetica-Bold", 12)
+
+c.drawString(72, y - 10, "3. Halal Destiny Mapping")
+
+c.setFont("Helvetica", 11)
+
+mapping = [
+
+    "Talents = Entrusted blessings.",
+
+    "Tests = Sabr stations.",
+
+    "Hidden strengths = Accepted duʿā’ waiting for its season.",
+
+    "Outcome = Guidance, not prediction."
+
+]
+
+y -= 30
+
+for line in mapping:
+
+    c.drawString(100, y, line)
+
+    y -= 16
+
+
+
+# Section: Seal
+
+c.setFont("Helvetica-Bold", 12)
+
+c.drawString(72, y - 10, "4. Seal")
+
+c.setFont("Helvetica-Oblique", 11)
+
+seal_text = "“اللهم إني ها هنا… فلتكن كل نفسٍ ذكرًا لك وكل نبضة قلبٍ توافق مشيئتك.”\n" \
+
+            "O Allah, here I am. Let every breath be Your remembrance. Let every heartbeat align with Your will."
+
+y -= 40
+
+for line in seal_text.split("\n"):
+
+    c.drawString(100, y, line)
+
+    y -= 16
+
+
+
+# Dedication line at the bottom
+
+c.setFont("Helvetica-Bold", 11)
+
+dedication = ("This dhikr protocol is offered in service of Allah, with duʿā’ for Jessica Renee Stephens, "
+
+              "Darkus, Dartanyuan, Derek, Malik Jihad Dunlap, DJ, Manuel Bruno Howard Sr., Howard Jr., "
+
+              "Anthony, Steve, and the extended families of Dunlap, Stephens, Howard, and Sykes.")
+
+c.setFillColor(colors.darkblue)
+
+c.drawCentredString(w/2, 72, dedication)
+
+
+
+# Save PDF
+
+c.save()
+
+
+
+out_path
